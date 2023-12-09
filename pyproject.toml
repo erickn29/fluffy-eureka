@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "pythonrussiabackend"
+version = "0.1.0"
+description = ""
+authors = ["Yaroslav Novikov <arhdomain@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+setuptools = "^69.0.2"
+wheel = "^0.42.0"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+ruff = "^0.1.7"
+sqlalchemy = "^2.0.23"
+alembic = "^1.13.0"
+pre-commit = "^3.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = [
+    "E",
+    "F",
+    "W",
+    "N",
+    "D",
+    "UP",
+    "ANN",
+    "BLE",
+    "B",
+    "C4",
+    "DJ",
+    "ICN",
+    "PYI",
+    "RET",
+    "SIM",
+    "PL",
+]
+
+exclude = [
+    ".pre-commit-config.yaml"
+]
+
+ignore = [
+    "D100",
+    "D107",
+    "D106",
+    "D400",
+    "D415",
+    "ANN101",
+    "DJ001",
+    "D105",
+    "D203",
+    "D213",
+    "PLR0912",
+    "PLR0915",
+]
+
+line-length = 79
