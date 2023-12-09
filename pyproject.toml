@@ -15,6 +15,9 @@ ruff = "^0.1.7"
 sqlalchemy = "^2.0.23"
 alembic = "^1.13.0"
 pre-commit = "^3.5.0"
+psycopg2 = "^2.9.9"
+pytz = "^2023.3.post1"
+python-dotenv = "^1.0.0"
 
 
 [build-system]
@@ -41,9 +44,7 @@ select = [
     "PL",
 ]
 
-exclude = [
-    ".pre-commit-config.yaml"
-]
+exclude = []
 
 ignore = [
     "D100",
