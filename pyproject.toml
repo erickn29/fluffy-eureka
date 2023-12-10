@@ -18,6 +18,14 @@ pre-commit = "^3.5.0"
 psycopg2 = "^2.9.9"
 pytz = "^2023.3.post1"
 python-dotenv = "^1.0.0"
+django = "^5.0"
+djangorestframework = "^3.14.0"
+beautifulsoup4 = "^4.12.2"
+requests = "^2.31.0"
+djoser = "^2.2.2"
+tqdm = "^4.66.1"
+django-cors-headers = "^4.3.1"
+pytils = "^0.4.1"
 
 
 [build-system]
@@ -44,7 +52,12 @@ select = [
     "PL",
 ]
 
-exclude = []
+exclude = [
+    "settings.py",
+    "apps.py",
+    "__init__.py",
+    "manage.py",
+]
 
 ignore = [
     "D100",
@@ -53,12 +66,15 @@ ignore = [
     "D400",
     "D415",
     "ANN101",
+    "ANN204",
     "DJ001",
     "D105",
     "D203",
     "D213",
     "PLR0912",
     "PLR0915",
+    "ANN002",
+    "ANN003",
 ]
 
 line-length = 79
