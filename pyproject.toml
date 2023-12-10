@@ -26,6 +26,7 @@ djoser = "^2.2.2"
 tqdm = "^4.66.1"
 django-cors-headers = "^4.3.1"
 pytils = "^0.4.1"
+drf-yasg = "^1.21.7"
 
 
 [build-system]

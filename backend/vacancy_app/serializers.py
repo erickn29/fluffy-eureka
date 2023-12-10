@@ -63,6 +63,12 @@ class CompanySerializer(serializers.ModelSerializer):
 class VacancySerializer(serializers.ModelSerializer):
     """Сериализатор модели"""
 
+    company = CompanySerializer()
+    speciality = SpecialitySerializer()
+    experience = ExperienceSerializer()
+    grade = GradeSerializer()
+    language = LanguageSerializer()
+
     class Meta:
         model = Vacancy
         fields = '__all__'

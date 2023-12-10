@@ -14,6 +14,7 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+        ordering = ['-count', ]
 
     def __str__(self) -> str:
         return self.name
