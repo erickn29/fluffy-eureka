@@ -39,7 +39,7 @@ class Article(models.Model):
     """Модель статей"""
 
     title = models.CharField(max_length=512, blank=False)
-    text = models.TextField()
+    text: str = models.TextField()
     # poster = RichTextUploadingField()
     slug = models.SlugField(max_length=512, null=True, blank=True, unique=True,
                             db_index=True)

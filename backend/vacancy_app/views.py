@@ -1,2 +1,11 @@
+from rest_framework import viewsets
 
-# Create your views here.
+from .models import Vacancy
+from .serializers import VacancySerializer
+
+
+class VacancyViewSet(viewsets.ModelViewSet):
+    """Представление вакансий"""
+
+    queryset = Vacancy.objects.all()
+    serializer_class = VacancySerializer
