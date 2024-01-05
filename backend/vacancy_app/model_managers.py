@@ -9,7 +9,7 @@ class CustomVacancyManager(models.Manager):
 
     def get_actual(self) -> QuerySet:
         """Метод возвращает вакансии, опубликованные за последние 30 дней"""
-        start_date = datetime.now().date() - timedelta(days=30)
+        start_date = datetime.now().date() - timedelta(days=300)
         end_date = datetime.now().date()
         return self.filter(
             Q(date__range=[start_date, end_date]) &

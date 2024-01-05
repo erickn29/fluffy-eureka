@@ -63,8 +63,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
     'http://localhost:5173',
     'http://127.0.0.1:5173',
-    'http://127.0.0.1',
-    'http://localhost',
+    'http://localhost:3000',
     'http://192.168.100.18:8080'
 ]
 
@@ -122,6 +121,14 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'OPTIONS': {'client_encoding': 'UTF8', }
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 

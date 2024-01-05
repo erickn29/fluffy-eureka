@@ -10,7 +10,7 @@ from .serializers import VacancySerializer, ProfessionSerializer, \
 class VacancyViewSet(viewsets.ModelViewSet):
     """Представление вакансий"""
 
-    queryset = Vacancy.objects.all()
+    queryset = Vacancy.objects.get_actual()
     serializer_class = VacancySerializer
 
 
