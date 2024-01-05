@@ -6,7 +6,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8080:3000"
     depends_on:
       - backend
 
@@ -15,22 +15,25 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       - db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mydatabase
+      POSTGRES_PASSWORD: Erick1988
+      POSTGRES_DB: pythonrussia
       POSTGRES_HOST: db
+      SECRET_KEY: "&ura7nv2c6vnav+t6-q^h22$v%=h+bm64h!f!&8)q(0l+wh69("
 
   db:
     image: postgres
     restart: always
+    ports:
+      - "5454:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mydatabase
+      POSTGRES_PASSWORD: Erick1988
+      POSTGRES_DB: pythonrussia
     volumes:
       - db-data:/var/lib/postgresql/data/
 
