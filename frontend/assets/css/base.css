@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background: #020420;
+    color: #e3e3e3;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #e1e1e1;
+    font-weight: 400;
+    transition: .2s;
+}
+
+a:hover {
+    color: #42b883;
+    transition: .2s;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+code {
+    border-radius: 10px;
+}
+
+.ad {
+    /* display: flex; */
+    padding: 10px;
+}
+
+.telegram {
+    background: linear-gradient(45deg, #23a0dd, #1d83b6);
+    border-radius: 7px;
+    font-size: .8rem;
+    top: 80px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    box-shadow: 0 0 20px #239fdd50;
+    transition: .2s;
+}
+
+.telegram:hover {
+    box-shadow: 0 0 25px #239fdd93;
+    transition: .2s;
+}
