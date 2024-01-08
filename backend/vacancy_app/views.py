@@ -13,6 +13,9 @@ class VacancyViewSet(viewsets.ModelViewSet):
     queryset = Vacancy.objects.get_actual().filter(language__name='Python')
     serializer_class = VacancySerializer
 
+    # def get_queryset(self):
+    #     pass
+
 
 class StackToolViewSet(viewsets.ModelViewSet):
     """Представление стека"""

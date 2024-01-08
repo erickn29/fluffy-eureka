@@ -33,7 +33,7 @@
       Опыт: {{ vacancy.experience.name }}
     </div>
 
-    <div v-if="vacancy.stack" class="vacancy-stack">
+    <div v-if="vacancy.stack" class="vacancy-stack" style="overflow-x: auto;">
       <span class="stack-item" v-for="item in vacancy.stack" :key="item">
         {{ item }}
       </span>

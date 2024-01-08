@@ -22,7 +22,7 @@ definePageMeta({
 });
 
 const { data: post } = await useFetch(
-  "http://127.0.0.1:8000/api/v1/post/" + id + "/"
+  "http://127.0.0.1:8000/post/" + id + "/"
 );
 
 setTimeout(function () {

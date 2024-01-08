@@ -13,5 +13,5 @@
 </template>
 
 <script setup>
-const { data: posts } = await useFetch("http://127.0.0.1:8000/api/v1/post/");
+const { data: posts } = await useFetch("http://127.0.0.1:8000/post/");
 </script>
