@@ -19,6 +19,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
     path(
         'swagger<format>/',
         schema_view.without_ui(cache_timeout=0),

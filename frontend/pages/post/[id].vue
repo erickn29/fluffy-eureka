@@ -28,13 +28,13 @@ const { data: post } = await useFetch(
 setTimeout(function () {
   document.querySelectorAll("code").forEach((block) => {
     block.innerHTML = block.innerHTML.
-      replace(/&/g, "&amp;").
+      // replace(/&/g, "&amp;").
       replace('<code>', '').
+      replace('<code class="language-plaintext">', '').
       replace('</code>', '').
-      replace(/</g, "&lt;").
-      replace(/>/g, "&gt;").
       replace(/"/g, "&quot;").
       replace(/'/g, "&#039;")
+      // replace(/&gt;/g, '>')
     hljs.highlightElement(block);
   });
 }, 20);

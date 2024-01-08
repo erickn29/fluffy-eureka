@@ -15,15 +15,18 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8001:8000"
+      - "8000:8000"
     depends_on:
       - db
+    volumes:
+      - static:/app/static
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Erick1988
       POSTGRES_DB: pythonrussia
       POSTGRES_HOST: db
       SECRET_KEY: "&ura7nv2c6vnav+t6-q^h22$v%=h+bm64h!f!&8)q(0l+wh69("
+      DEBUG: false
 
   db:
     image: postgres
@@ -37,5 +40,17 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data/
 
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - nginx:/etc/nginx
+      - static:/app/static
+    depends_on:
+      - backend
+
 volumes:
   db-data:
+  nginx:
+  static:

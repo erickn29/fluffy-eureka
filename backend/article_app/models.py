@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from pytils.translit import slugify
 from django.urls import reverse
 
+from django_ckeditor_5.fields import CKEditor5Field
+
 
 class Tag(models.Model):
     """Модель тегов"""
@@ -39,8 +41,8 @@ class Article(models.Model):
     """Модель статей"""
 
     title = models.CharField(max_length=512, blank=False)
-    text: str = models.TextField()
-    # poster = RichTextUploadingField()
+    text: str = CKEditor5Field()
+    poster_link = models.CharField(max_length=512, blank=False, null=True)
     slug = models.SlugField(max_length=512, null=True, blank=True, unique=True,
                             db_index=True)
     datetime = models.DateTimeField(auto_now=True)

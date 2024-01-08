@@ -2,7 +2,6 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-# router.register(r'vacancy', views.VacancyViewSet)
 router.register(r'', views.VacancyViewSet)
 router.register(r'stacktool', views.StackToolViewSet)
 router.register(r'language', views.LanguageViewSet)
