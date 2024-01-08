@@ -1,7 +1,7 @@
 <template>
-  <div class="container sticky-top">
+  <div class="container sticky-top" style="backdrop-filter: blur(8px); background: #02042075;">
     <nav class="navbar">
-      <a href="/" class="navbar-brand">PYTHON RUSSIA</a>
+      <a href="/" class="navbar-brand"><i class="fa-brands fa-python" style="font-size: 1.25rem;"></i> PYTHON RUSSIA</a>
       <div class="nav-links d-flex gap-3">
         <NuxtLink to="/post">Статьи</NuxtLink>
         <NuxtLink to="/vacancy">Вакансии</NuxtLink>
@@ -12,10 +12,10 @@
 </template>
 
 <style>
-.navbar {
-  background: #02042075;
-  backdrop-filter: blur(8px);
-}
+/* .navbar { */
+  /* background: #02042075; */
+  /* backdrop-filter: blur(8px); */
+/* } */
 
 .navbar a{
   font-weight: 600;

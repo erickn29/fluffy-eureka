@@ -32,9 +32,9 @@ debug_bool = debug.lower() == "true"
 DEBUG = debug_bool
 
 if DEBUG:
-    print("Режим отладки ВКЛючен.")
+    print("Режим отладки В К Л ючен.")
 else:
-    print("Режим отладки ВЫКЛючен.")
+    print("Режим отладки В Ы К Л ючен.")
 
 ALLOWED_HOSTS = ['192.168.100.18', '127.0.0.1', 'localhost']
 

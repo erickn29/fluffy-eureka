@@ -20,6 +20,11 @@ export default defineNuxtConfig({
         }
       ],
       link: [
+        { 
+          rel: 'icon', 
+          type: 'image/x-icon', 
+          href: '/python.svg' 
+        },
         {
           rel: 'stylesheet', 
           href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css'
@@ -35,6 +40,9 @@ export default defineNuxtConfig({
         },
         {
           src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'
+        },
+        {
+          src: 'https://kit.fontawesome.com/bd722a61a1.js',
         }
       ]
     }

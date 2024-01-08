@@ -41,6 +41,7 @@ class Article(models.Model):
     """Модель статей"""
 
     title = models.CharField(max_length=512, blank=False)
+    description = models.TextField(null=True, blank=True)
     text: str = CKEditor5Field()
     poster_link = models.CharField(max_length=512, blank=False, null=True)
     slug = models.SlugField(max_length=512, null=True, blank=True, unique=True,

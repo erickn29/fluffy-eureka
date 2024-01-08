@@ -17,3 +17,9 @@ class CustomVacancyManager(models.Manager):
                 Q(salary_from__isnull=False) | Q(salary_to__isnull=False)
             )
         )
+
+    def get_python(self) -> QuerySet:
+        """Метод возвращает только Python вакансии"""
+        return self.filter(
+            language__name='Python'
+        )

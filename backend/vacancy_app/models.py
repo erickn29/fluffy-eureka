@@ -113,7 +113,7 @@ class Vacancy(models.Model):
         ]
         unique_together = ('title', 'salary_from', 'salary_to', 'company')
         db_table = 'vacancy_vacancy'
-        ordering = ['-date', ]
+        ordering = ['-id', ]
 
     def __str__(self) -> str:
         return self.title

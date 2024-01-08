@@ -55,6 +55,8 @@ class GradeSerializer(serializers.ModelSerializer):
 class CompanySerializer(serializers.ModelSerializer):
     """Сериализатор модели"""
 
+    city = CitySerializer()
+
     class Meta:
         model = Company
         fields = '__all__'
@@ -68,6 +70,21 @@ class VacancySerializer(serializers.ModelSerializer):
     experience = ExperienceSerializer()
     grade = GradeSerializer()
     language = LanguageSerializer()
+    stack = serializers.SerializerMethodField()
+
+    def get_stack(self, obj: Vacancy) -> list | None:
+        """Метод возвращает список стека"""
+        try:
+            data = StackTool.objects.filter(vacancy=obj)
+            stack_list = []
+            if data:
+                for obj in data:
+                    stack_list.append(obj.name)
+                return stack_list
+            return None
+        except AttributeError as e:
+            print(e)
+            return None
 
     class Meta:
         model = Vacancy

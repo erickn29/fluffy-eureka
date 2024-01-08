@@ -50,3 +50,19 @@ code {
     box-shadow: 0 0 25px #239fdd93;
     transition: .2s;
 }
+
+.btn-success {
+    background: #42b8b2;
+    border: 1px solid #42b8b2;
+    text-shadow: 0 0 3px #0000009e;
+}
+
+.btn-success:hover {
+    background: #399c97;
+    border: 1px solid #399c97;
+}
+
+.btn-success:active {
+    background: #399c97 !important;
+    border: 1px solid #399c97 !important;
+}
