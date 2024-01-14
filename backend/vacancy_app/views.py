@@ -1,8 +1,10 @@
 from django.db.models import QuerySet, Q
+from django.http import HttpRequest, HttpResponse
 from rest_framework import viewsets
 
 from .models import Vacancy, Grade, Company, Profession, Experience, \
     Speciality, City, Language, StackTool
+from .run_parsers import main
 from .serializers import VacancySerializer, ProfessionSerializer, \
     CompanySerializer, GradeSerializer, ExperienceSerializer, CitySerializer, \
     SpecialitySerializer, LanguageSerializer, StackToolSerializer
@@ -109,3 +111,9 @@ class ProfessionViewSet(viewsets.ModelViewSet):
 
     serializer_class = ProfessionSerializer
     queryset = Profession.objects.all()
+
+
+def get_data(request: HttpRequest) -> HttpResponse:
+    """Представление для активации сбора вакансий"""
+    main(True, True, True, True)
+    return HttpResponse('ok')

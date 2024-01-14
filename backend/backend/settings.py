@@ -123,12 +123,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-print(
-    os.getenv('POSTGRES_DB'),
-    os.getenv('POSTGRES_USER'),
-    os.getenv('POSTGRES_PASSWORD'),
-    os.getenv('POSTGRES_HOST')
-)
+# print(
+#     os.getenv('POSTGRES_DB'),
+#     os.getenv('POSTGRES_USER'),
+#     os.getenv('POSTGRES_PASSWORD'),
+#     os.getenv('POSTGRES_HOST')
+# )
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

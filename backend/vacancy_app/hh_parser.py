@@ -54,10 +54,12 @@ class HHParser(BaseParser):
                 )
                 if response.ok:
                     soup = BeautifulSoup(response.text, 'html.parser')
-                    blocks = soup.find_all('div', {'class': 'serp-item'})
+                    blocks = soup.find_all(
+                        'div', {'class': 'serp-item'}
+                    )
                     for block in blocks:
                         block_title = block.find_all_next(
-                            'a', {'data-qa': 'serp-item__title'}
+                            'span', {'data-qa': 'serp-item__title'}
                         )[0].text
                         block_salary = block.find_all_next(
                             'span',
@@ -69,7 +71,7 @@ class HHParser(BaseParser):
                         )[0].text
                         block_link = block.find_all_next(
                             'a',
-                            {'data-qa': 'serp-item__title'}
+                            {'class': 'bloko-link'}
                         )[0]['href']
                         watched.append(
                             (block_title, block_salary, block_company)
@@ -85,6 +87,10 @@ class HHParser(BaseParser):
                             links_list.append(block_link)
             except requests.exceptions.RequestException:
                 print(f'Не смог обработать страницу {page}')
+            except IndexError as e:
+                print(e)
+            except AttributeError as e:
+                print(e)
         return links_list
 
     def _get_title(self, soup: BeautifulSoup) -> str | None:
