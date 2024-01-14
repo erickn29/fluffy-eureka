@@ -43,6 +43,9 @@ export default defineNuxtConfig({
         },
         {
           src: 'https://kit.fontawesome.com/bd722a61a1.js',
+        },
+        {
+          src: 'https://code.jquery.com/jquery-3.7.1.slim.min.js'
         }
       ]
     }
