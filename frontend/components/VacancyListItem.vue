@@ -78,10 +78,9 @@ i{
 .stack-item{
   font-size: .75rem;
   padding: 2px 5px;
-  background: #9d42b8b5;
+  background: #79368db5;
   margin-right: 5px;
   border-radius: 3px;
-  color: black;
-  font-weight: 700;
+  color: #dbdbdb;
 }
 </style>

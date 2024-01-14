@@ -33,11 +33,10 @@
         <input id="salary" class="form-control" type="number" value="30000" />
       </div>
     </div>
-    <div class="d-flex justify-content-center mb-4 col-12">
+    <div class="d-flex justify-content-start mb-4 col-12">
       <button
         @click="fetchData('http://127.0.0.1:8000/api/v1/vacancy/', true)"
         class="btn btn-success"
-        style="width: 100%"
       >
         Искать
       </button>
@@ -47,7 +46,7 @@
         <VacancyListItem :vacancy="vacancy" />
       </div>
     </div>
-    <div v-else>Ничего нет</div>
+    <div style="min-height: 555px;" class="d-flex justify-content-center" v-else><TheLoader/></div>
     <div v-if="nextPageUrl" class="d-flex justify-content-center mb-4">
       <button @click="next" class="btn btn-success" style="width: 100%">
         Показать ещё
@@ -58,6 +57,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import TheLoader from "~/components/TheLoader.vue";
 
 // Используем реактивное значение для хранения данных
 const vacancies = ref([]);

@@ -1,5 +1,5 @@
 <template>
-  <div class="container sticky-top" style="backdrop-filter: blur(8px); background: #02042075;">
+  <div class="container sticky-top" style="backdrop-filter: blur(16px); background: #02042075;">
     <nav class="navbar">
       <a href="/" class="navbar-brand"><i class="fa-brands fa-python" style="font-size: 1.25rem;"></i> PYTHON RUSSIA</a>
       <div class="nav-links d-flex gap-3">

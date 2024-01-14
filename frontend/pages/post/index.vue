@@ -1,15 +1,16 @@
 <template>
   <section>
-    <div class="post row justify-content-center" v-if="posts.results.length > 0">
-      <div class="post-item row d-flex justify-content-center align-items-center mb-5" v-for="post in posts.results" :key="post.id">
-        <NuxtLink :to="'/post/' + post.id" class=""><h2>{{ post.title }}</h2></NuxtLink>
-        <div v-if="post.poster_link">
-          {{ post.poster_link }}
+    <div class="post" v-if="posts.results.length > 0">
+      <div class="post-item row d-flex justify-content-center mb-5" v-for="post in posts.results" :key="post.id">
+        
+        <div class="post-link my-2 col-lg-6 mb-4" v-if="post.poster_link">
+          <img :src="post.poster_link">
         </div>
         <!-- <div class="post-link mb-2" v-else>
           Место для картинки
         </div> -->
-        <div class="post-text">
+        <div class="post-text col-lg-6">
+          <NuxtLink :to="'/post/' + post.id"><h2>{{ post.title }}</h2></NuxtLink>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ducimus sint fuga expedita unde non impedit, quidem similique, voluptates assumenda quas culpa magnam quasi ut quos eos incidunt quod eaque.
         </div>
       </div>
@@ -41,12 +42,17 @@ const colorIt = () => {
 }
 
 onMounted(() => {
-  colorIt()
+  // colorIt()
 });
 
 </script>
 
 <style>
+
+img {
+  max-height: 300px;
+  max-width: 430px;
+}
 
 h2{
   font-size: 1.3rem;
@@ -54,14 +60,11 @@ h2{
   font-weight: 700;
 }
 .post-link {
-  /* padding: 20px; */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  background: #888;
-  text-align: center;
-  min-height: 300px
+  max-height: 300px;
+  flex-wrap: nowrap;
+  justify-content: start;
+  padding: 0;
 }
 .red { background: linear-gradient(45deg, red, white); }
 .green { background: linear-gradient(45deg, green, white); }
